@@ -1,0 +1,54 @@
+server:
+  port: 8080
+
+mysql-master:
+  host: 127.0.0.1
+  port: 33065
+  db: base
+  username: root
+  password: root
+  charset: utf8mb4
+  timeout:  3s
+  parseTime: true
+  loc:  Local
+  maxIdleConns: 10
+  maxOpenConns: 100
+
+mysql-slave:
+  host: 127.0.0.1
+  port: 33066
+  db: base
+  username: root
+  password: root
+  charset: utf8mb4
+  timeout:  3s
+  parseTime: true
+  loc:  Local
+  maxIdleConns: 10
+  maxOpenConns: 100
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  db: 0
+  password: root
+
+log:
+  level: error
+  filename: log/gin.log
+  maxsize: 500
+  max_age: 7
+  max_backups: 10
+
+scheduler:
+  - Test: '0 /5 * * * *'
+
+rsa:
+  pub_key:
+  pub_key_data_type:
+  pri_key:
+  pri_key_data_type:
+  pri_key_type:
+
+internal-host: "[\"*\"]"
+internal-ip: "[\"*\"]"
